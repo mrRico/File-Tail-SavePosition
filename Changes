@@ -1,0 +1,6 @@
+Revision history for Perl extension File::Tail::SavePosition.
+
+0.01  Fri Apr  8 13:03:05 2011
+	- original version; created by h2xs 1.23 with options
+		-AX File::Tail::SavePosition
+

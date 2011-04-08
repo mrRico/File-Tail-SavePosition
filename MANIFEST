@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README.pod
+t/File-Tail-SavePosition.t
+lib/File/Tail/SavePosition.pm

@@ -1,0 +1,50 @@
+=head1 NAME
+
+File::Tail::SavePosition
+
+=head1 DESCRIPTION
+
+Extends File::Tail to save the cursor position in file.
+File::Tail::SavePosition saved you from re-reading the file from the beginning, 
+when system restart
+
+=SYNOPSIS
+
+    use File::Tail;
+    use File::Tail::SavePosition;
+
+    my $tail = File::Tail->new(
+        name        => $filename,
+        maxinterval => 15,
+        interval    => 10,
+        adjustafter => 20,
+        nowait      => 1,
+        tail        => -1
+    );
+    $tail->pos_storage($filename.'.pos');
+    
+    while (defined(my $string = $tail->read)) {
+        ...
+        ...
+        $tail->save_position;
+    }
+
+=head1 OBJECT METHODS
+
+=head2 pos_storage($filename)
+
+Add a file which will store data about the position
+
+=head2 save_position()
+
+Update position
+
+=head1 SEE ALSO
+
+L<File::Tail>, L<Sub::Install>
+
+=head1 AUTHOR
+
+mr.Rico <catamoose at yandex.ru>
+
+=cut
